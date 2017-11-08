@@ -23,20 +23,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class();
+?>
 
-<div class="hfeed site" id="page">
+
+<div class="hfeed site"  id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
-	<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
+	<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar"  >
 
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content',
 		'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-md ">
 
 		<?php if ( 'container' == $container ) : ?>
-			<div class="container">
+			<div class="container-fluid">
 		<?php endif; ?>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,10 +47,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<!-- Your site title as branding in the menu -->
 					<?php if ( ! has_custom_logo() ) { ?>
+                <script>console.log("I ran 1"); </script>
 
-						<?php if ( is_front_page() && is_home() ) : ?>
+						<?php if ( is_front_page() && is_home() ) :  ?>
 
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+
+							<h1 class="navbar-brand"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 							
 						<?php else : ?>
 
@@ -65,7 +69,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
+						'container_class' => 'collapse navbar-collapse navbar_font',
 						'container_id'    => 'navbarNavDropdown',
 						'menu_class'      => 'navbar-nav',
 						'items_wrap'      => '<ul id="nav" class="nav navbar-nav navbar-right">%3$s</ul>',

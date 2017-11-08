@@ -9133,8 +9133,12 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
-body {
-  background-color: #add9f4; }
+.navbar {
+  border: 1px solid; }
+
+.navbar_brand_custom {
+  height: 40px;
+  width: 40px; }
 
 /*
 * Use existing Bootstrap 4 classes and
